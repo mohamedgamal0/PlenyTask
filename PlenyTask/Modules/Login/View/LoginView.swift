@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
+    @State private var username = ""
+    @State private var password = ""
     
     var body: some View {
+        ScrollView {
             VStack {
-                
                 Image("welcome_login_img")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -22,45 +24,16 @@ struct LoginView: View {
 
                 Text("Welcome!")
                     .padding()
-                    .font(DesignSystem.Fonts.title3)
-                    .foregroundColor(DesignSystem.Colors.primary)
+                    .font(PlenyUI.Theme.Typography.Title.bold.font)
+                    .foregroundColor(PlenyUI.Theme.Color.Primary.x100.color)
+                
+                VStack(spacing: 24) {
+                    StyledTextField(text: $username, placeholder: "Username", label: "Username")
+                    StyledTextField(text: $password, placeholder: "Password", label: "Password")
+                }
                 
                 Spacer().frame(height: 24)
                 
-                VStack(alignment: .leading) {
-                    Text("Username")
-                        .font(DesignSystem.Fonts.subHeadLine)
-                        .padding(.leading)
-                        .foregroundColor(DesignSystem.Colors.grey)
-
-                    TextField("Enter your username", text: $viewModel.username)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                }
-                    
-                Spacer().frame(height: 24)
-
-                // Password text field with show/hide button
-                VStack(alignment: .leading) {
-                    Text("Password")
-                        .font(DesignSystem.Fonts.subHeadLine)
-                        .foregroundColor(DesignSystem.Colors.grey)
-                        .padding(.leading)
-                    HStack {
-                        SecureField("Enter your password", text: $viewModel.password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.horizontal)
-                        Button(action: {
-                            // Toggle password visibility
-                            viewModel.togglePasswordVisibility()
-                        }) {
-                            Image(systemName: viewModel.isPasswordVisible ? "eye" : "eye.slash")
-                        }
-                    }
-                }
-                .padding(.vertical)
-                
-                // Login button
                 Button(action: {
                     viewModel.login()
                 }) {
@@ -73,13 +46,14 @@ struct LoginView: View {
                         .padding(.horizontal)
                 }
                 
-                // Error message, if any
+                // MARK: - Error message, if any
                 if !viewModel.errorMessage.isEmpty {
                     Text("Error: \(viewModel.errorMessage)")
                         .foregroundColor(.red)
                         .padding()
                 }
             }
+        }
         .ignoresSafeArea()
     }
 }
