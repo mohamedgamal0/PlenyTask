@@ -28,8 +28,8 @@ struct LoginView: View {
                     .foregroundColor(PlenyUI.Theme.Color.Primary.x100.color)
                 
                 VStack(spacing: 24) {
-                    StyledTextField(text: $username, placeholder: "Username", label: "Username")
-                    StyledTextField(text: $password, placeholder: "Password", label: "Password")
+                    StyledTextField(text: $username, placeholder: "Username", label: "Username", isSecure: false)
+                    StyledTextField(text: $password, placeholder: "Password", label: "Password", isSecure: true)
                 }
                                 
                 PrimaryButton(title: "Sign in") {
