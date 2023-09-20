@@ -31,20 +31,11 @@ struct LoginView: View {
                     StyledTextField(text: $username, placeholder: "Username", label: "Username")
                     StyledTextField(text: $password, placeholder: "Password", label: "Password")
                 }
-                
-                Spacer().frame(height: 24)
-                
-                Button(action: {
-                    viewModel.login()
-                }) {
-                    Text("Login")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                                
+                PrimaryButton(title: "Sign in") {
+                    
                 }
+                .padding(.top, 40)
                 
                 // MARK: - Error message, if any
                 if !viewModel.errorMessage.isEmpty {

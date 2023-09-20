@@ -14,13 +14,11 @@ struct PrimaryButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
+                .font(PlenyUI.Theme.Typography.HeadLines.semibold.font)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(PlenyUI.Theme.Color.Primary.x100.color)
                 .foregroundColor(.white)
-                .frame(height: 46)
-                .padding(.vertical, 12)
-                .padding(.horizontal, 8)
-                .padding(.trailing, 16)
-                .padding(.leading, 16)
-                .background(Color.blue)
                 .cornerRadius(32)
         }
         .padding(.trailing, 16)
@@ -33,6 +31,6 @@ struct PrimaryButton: View {
 
 struct LoginButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(title: "Login", action: {})
+        PrimaryButton(title: "Sign in", action: {})
     }
 }

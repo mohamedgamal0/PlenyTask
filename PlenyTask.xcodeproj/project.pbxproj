@@ -295,10 +295,10 @@
 		284D33F92ABB3F7F0070B024 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				28AF3BA12ABB0E5E0011B5BD /* DesignSystem.swift */,
 				284D33FA2ABB42F70070B024 /* Icos */,
 				284D33F32ABB3E860070B024 /* Colors */,
 				284D33F62ABB3EC60070B024 /* Fonts */,
-				28AF3BA12ABB0E5E0011B5BD /* DesignSystem.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";

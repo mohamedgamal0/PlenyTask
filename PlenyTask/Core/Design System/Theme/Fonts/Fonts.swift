@@ -36,3 +36,18 @@ extension PlenyUI.Theme.Typography {
     }
 }
 
+extension PlenyUI.Theme.Typography {
+    enum HeadLines {
+        // MARK: - Cases
+        case semibold
+        
+        // MARK: - Properties
+        var font: Font {
+            switch self {
+            case .semibold:
+                return Font.system(size: 17).weight(.semibold)
+            }
+        }
+    }
+}
+
