@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
-    @State private var username = ""
-    @State private var password = ""
     
     var body: some View {
         ScrollView {
@@ -28,11 +26,12 @@ struct LoginView: View {
                     .foregroundColor(PlenyUI.Theme.Color.Primary.x100.color)
                 
                 VStack(spacing: 24) {
-                    StyledTextField(text: $username, placeholder: "Username", label: "Username", isSecure: false)
-                    StyledTextField(text: $password, placeholder: "Password", label: "Password", isSecure: true)
+                    StyledTextField(text: $viewModel.username, placeholder: "Username", label: "Username", isSecure: false)
+                    StyledTextField(text: $viewModel.password, placeholder: "Password", label: "Password", isSecure: true)
                 }
                                 
                 PrimaryButton(title: "Sign in") {
+                    viewModel.login()
                     
                 }
                 .padding(.top, 40)
@@ -46,11 +45,5 @@ struct LoginView: View {
             }
         }
         .ignoresSafeArea()
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(viewModel: LoginViewModel(loginUseCase: LoginUseCase()))
     }
 }

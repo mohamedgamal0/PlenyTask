@@ -11,14 +11,16 @@ import Combine
 final class LoginViewModel: ObservableObject {
     @Published var username = ""
     @Published var password = ""
-    @Published var isPasswordVisible = false
     @Published var isLoggedIn = false
     @Published var errorMessage = ""
     
     private let loginUseCase: LoginUseCase
+    private let appCoordinator: AppCoordinator
+    private var cancellables: Set<AnyCancellable> = []
     
-    init(loginUseCase: LoginUseCase) {
+    init(loginUseCase: LoginUseCase, appCoordinator: AppCoordinator) {
         self.loginUseCase = loginUseCase
+        self.appCoordinator = appCoordinator
     }
     
     func login() {
@@ -31,14 +33,8 @@ final class LoginViewModel: ObservableObject {
                     self?.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { [weak self] _ in
-                self?.isLoggedIn = true
+                self?.appCoordinator.login()
             })
             .store(in: &cancellables)
     }
-    
-    func togglePasswordVisibility() {
-        isPasswordVisible.toggle()
-    }
-    
-    private var cancellables = Set<AnyCancellable>()
 }

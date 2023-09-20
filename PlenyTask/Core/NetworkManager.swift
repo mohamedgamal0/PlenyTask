@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-class NetworkManager {
+final class NetworkManager {
     static let shared = NetworkManager()
     private let baseUrl = "https://dummyjson.com"
 
     private init() {}
 
-    func request<T: Decodable>(_ endpoint: Endpoint, responseType: T.Type) -> AnyPublisher<T, Error> {
+    func performRequest<T: Codable>(_ endpoint: EndpointProtocol) -> AnyPublisher<T, Error> {
         guard let url = URL(string: baseUrl + endpoint.path) else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
@@ -25,10 +25,10 @@ class NetworkManager {
         request.httpBody = endpoint.body
 
         return URLSession.shared.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: T.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
-    }
+               .map(\.data)
+               .decode(type: T.self, decoder: JSONDecoder())
+               .receive(on: DispatchQueue.main)
+               .eraseToAnyPublisher()
+       }
+    
 }
-

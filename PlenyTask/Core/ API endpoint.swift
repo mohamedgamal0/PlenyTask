@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Endpoint {
-    let path: String
-    let method: HTTPMethod
-    let headers: [String: String]?
-    let body: Data?
-}
+protocol EndpointProtocol {
+    var path: String { get }
+    var method: HTTPMethod { get }
+    var headers: [String: String]? { get }
+    var body: Data? { get }
+} 
 
 enum HTTPMethod: String {
     case get = "GET"
