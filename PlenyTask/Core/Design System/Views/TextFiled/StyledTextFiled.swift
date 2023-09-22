@@ -54,8 +54,7 @@ struct StyledTextField: View {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(PlenyUI.Theme.Color.Grey.x300.color, lineWidth: 1)
                 )
-                .padding(.trailing, 16)
-                .padding(.leading, 16)
+                .padding([.trailing, .leading], 16)
             }
         }
     }

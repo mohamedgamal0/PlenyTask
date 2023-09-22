@@ -21,8 +21,7 @@ struct PrimaryButton: View {
                 .foregroundColor(.white)
                 .cornerRadius(32)
         }
-        .padding(.trailing, 16)
-        .padding(.leading, 16)
+        .padding([.trailing, .leading], 16)
         .frame(height: 46)
 
 
