@@ -51,3 +51,34 @@ extension PlenyUI.Theme.Typography {
     }
 }
 
+
+extension PlenyUI.Theme.Typography {
+    enum Footnote {
+        // MARK: - Cases
+        case regular
+        
+        // MARK: - Properties
+        var font: Font {
+            switch self {
+            case .regular:
+                return Font.system(size: 13)
+            }
+        }
+    }
+}
+
+extension PlenyUI.Theme.Typography {
+    enum Body {
+        // MARK: - Cases
+        case regular
+        
+        // MARK: - Properties
+        var font: Font {
+            switch self {
+            case .regular:
+                return Font.system(size: 17)
+            }
+        }
+    }
+}
+
