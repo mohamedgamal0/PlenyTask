@@ -17,14 +17,17 @@ struct ProductCellView: View {
                     .resizable()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
+                    .accessibility(identifier: "product_profileImage")
                 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(product.userName)
                         .font(PlenyUI.Theme.Typography.HeadLines.semibold.font)
                         .foregroundColor(PlenyUI.Theme.Color.Grey.x900.color)
+                        .accessibility(identifier: "product_userNameLabel")
                     Text(product.date)
                         .font(PlenyUI.Theme.Typography.Footnote.regular.font)
                         .foregroundColor(PlenyUI.Theme.Color.Grey.x600.color)
+                        .accessibility(identifier: "product_dateLabel")
                 }
                 
                 
@@ -34,8 +37,11 @@ struct ProductCellView: View {
             Text(product.description)
                 .font(PlenyUI.Theme.Typography.Body.regular.font)
                 .foregroundColor(PlenyUI.Theme.Color.Grey.x700.color)
+                .accessibility(identifier: "product_dateLabel")
             
             ImageGrid(images: product.images)
+            .accessibility(identifier: "product_productImage")
+
         }
         .padding([.leading, .trailing], 16)
         
