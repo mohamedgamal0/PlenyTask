@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct Product {
+struct ProductUIModel {
     let id: Int
     let userName: String
     let date: String
+    let description: String
     let profileImageName: String
     let images: [String]
 }

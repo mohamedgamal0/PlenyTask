@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductListView: View {
-    let products: [Product]
+    let products: [ProductUIModel]
     
     var body: some View {
         List {

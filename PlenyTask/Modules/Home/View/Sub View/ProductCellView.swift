@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductCellView: View {
-    let product: Product
+    let product: ProductUIModel
     
     var body: some View {
         VStack(spacing: 12) {
@@ -31,7 +31,7 @@ struct ProductCellView: View {
                 Spacer()
             }
             
-            Text("Craving something delicious? Try our new dish - a savory mix of roasted vegetables and quinoa, topped with a zesty garlic. Yum!")
+            Text(product.description)
                 .font(PlenyUI.Theme.Typography.Body.regular.font)
                 .foregroundColor(PlenyUI.Theme.Color.Grey.x700.color)
             
@@ -44,7 +44,7 @@ struct ProductCellView: View {
 
 struct ProductCellView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleProduct = Product(id: 1, userName: "User1", date: "August 25, 2023", profileImageName: "welcome_login_img", images: ["Rectangle-3"])
+        let sampleProduct = ProductUIModel(id: 1, userName: "User1", date: "August 25, 2023", description: "Craving something delicious? Try our new dish - a savory mix of roasted vegetables and quinoa, topped with a zesty garlic. Yum!", profileImageName: "welcome_login_img", images: ["Rectangle-3"])
         
         return ProductCellView(product: sampleProduct)
             .previewLayout(.sizeThatFits)

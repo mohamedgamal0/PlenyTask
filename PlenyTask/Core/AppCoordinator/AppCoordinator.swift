@@ -16,7 +16,7 @@ final class AppCoordinator: ObservableObject {
     func start() -> some View {
         AppStateManager.shared.checkLoginState()
         if isLoggedIn {
-            return AnyView(HomeView(viewModel: HomeViewModel(appCoordinator: self)))
+            return AnyView(HomeView(viewModel: HomeViewModel(appCoordinator: self, productListUseCase: HomeUseCase(productRepository: ProductRepositoryImpl()))))
         } else {
             return AnyView(LoginView(viewModel: LoginViewModel(loginUseCase: LoginUseCase(), appCoordinator: self)))
         }
