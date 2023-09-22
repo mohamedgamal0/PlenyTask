@@ -36,6 +36,11 @@
 		284D340D2ABB834F0070B024 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D340C2ABB834F0070B024 /* ProductListView.swift */; };
 		284D34102ABB836A0070B024 /* ProductUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D340F2ABB836A0070B024 /* ProductUIModel.swift */; };
 		284D34122ABB83990070B024 /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D34112ABB83990070B024 /* ProductCellView.swift */; };
+		287A549B2ABE1E2100F388A2 /* HomeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A549A2ABE1E2100F388A2 /* HomeUseCaseTests.swift */; };
+		287A549E2ABE1F0000F388A2 /* HomeUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A549D2ABE1F0000F388A2 /* HomeUseCaseMocks.swift */; };
+		287A54A32ABE218C00F388A2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A54A22ABE218C00F388A2 /* HomeViewModelTests.swift */; };
+		287A54A52ABE22B900F388A2 /* MockProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A54A42ABE22B900F388A2 /* MockProductRepository.swift */; };
+		287A54A72ABE246E00F388A2 /* ImageGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287A54A62ABE246E00F388A2 /* ImageGridUITests.swift */; };
 		28AF3B9E2ABB0B4C0011B5BD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3B9D2ABB0B4C0011B5BD /* HomeView.swift */; };
 		28AF3BA22ABB0E5E0011B5BD /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF3BA12ABB0E5E0011B5BD /* DesignSystem.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +95,11 @@
 		284D340C2ABB834F0070B024 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		284D340F2ABB836A0070B024 /* ProductUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIModel.swift; sourceTree = "<group>"; };
 		284D34112ABB83990070B024 /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
+		287A549A2ABE1E2100F388A2 /* HomeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTests.swift; sourceTree = "<group>"; };
+		287A549D2ABE1F0000F388A2 /* HomeUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseMocks.swift; sourceTree = "<group>"; };
+		287A54A22ABE218C00F388A2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		287A54A42ABE22B900F388A2 /* MockProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductRepository.swift; sourceTree = "<group>"; };
+		287A54A62ABE246E00F388A2 /* ImageGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridUITests.swift; sourceTree = "<group>"; };
 		28AF3B9D2ABB0B4C0011B5BD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		28AF3BA12ABB0E5E0011B5BD /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +172,7 @@
 		28134F3C2AB339D800E7742F /* PlenyTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				287A54982ABE1DD600F388A2 /* Home */,
 				28134F3D2AB339D800E7742F /* PlenyTaskTests.swift */,
 			);
 			path = PlenyTaskTests;
@@ -170,6 +181,7 @@
 		28134F462AB339D800E7742F /* PlenyTaskUITests */ = {
 			isa = PBXGroup;
 			children = (
+				287A54AA2ABE26D400F388A2 /* Home */,
 				28134F472AB339D800E7742F /* PlenyTaskUITests.swift */,
 				28134F492AB339D800E7742F /* PlenyTaskUITestsLaunchTests.swift */,
 			);
@@ -402,6 +414,49 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		287A54982ABE1DD600F388A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				287A549C2ABE1EE800F388A2 /* Mocks */,
+				287A54A12ABE218300F388A2 /* ViewModel */,
+				287A54992ABE1E0400F388A2 /* Use-Case */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		287A54992ABE1E0400F388A2 /* Use-Case */ = {
+			isa = PBXGroup;
+			children = (
+				287A549A2ABE1E2100F388A2 /* HomeUseCaseTests.swift */,
+			);
+			path = "Use-Case";
+			sourceTree = "<group>";
+		};
+		287A549C2ABE1EE800F388A2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				287A549D2ABE1F0000F388A2 /* HomeUseCaseMocks.swift */,
+				287A54A42ABE22B900F388A2 /* MockProductRepository.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		287A54A12ABE218300F388A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				287A54A22ABE218C00F388A2 /* HomeViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		287A54AA2ABE26D400F388A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				287A54A62ABE246E00F388A2 /* ImageGridUITests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		28AF3B992ABB0ACE0011B5BD /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -594,7 +649,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287A549B2ABE1E2100F388A2 /* HomeUseCaseTests.swift in Sources */,
+				287A549E2ABE1F0000F388A2 /* HomeUseCaseMocks.swift in Sources */,
 				28134F3E2AB339D800E7742F /* PlenyTaskTests.swift in Sources */,
+				287A54A32ABE218C00F388A2 /* HomeViewModelTests.swift in Sources */,
+				287A54A52ABE22B900F388A2 /* MockProductRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +663,7 @@
 			files = (
 				28134F4A2AB339D800E7742F /* PlenyTaskUITestsLaunchTests.swift in Sources */,
 				28134F482AB339D800E7742F /* PlenyTaskUITests.swift in Sources */,
+				287A54A72ABE246E00F388A2 /* ImageGridUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
